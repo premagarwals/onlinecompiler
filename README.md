@@ -31,6 +31,49 @@ Planned features include:
 
 To run the backend locally, follow the steps below:
 
+#### Note: *We are using docker to sandbox the user submitted code, hence make sure to have docker installed, following images available.*
+----------
+
+### **1. Install Docker**
+
+-   **For Linux:** Follow the [official Docker installation guide for Linux](https://docs.docker.com/engine/install/).
+-   **For macOS:** Use [Docker Desktop for Mac](https://www.docker.com/products/docker-desktop/).
+-   **For Windows:** Use [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/).
+
+### **2. Set Up Docker Group (Optional for Linux)**
+```bash
+sudo usermod -aG docker $USER
+newgrp docker  # Apply group changes without logout
+
+```
+
+### **3. Pull Required Docker Images**
+
+Ensure the following Docker images are installed on the user's system:
+
+-   **Python image** (for running the Python code)
+-   **GCC image** (for compiling and running C++ code)
+-   **OpenJDK image** (for compiling and running Java code)
+
+```bash
+docker pull python:3.10      # Python image for running Python code
+docker pull gcc:latest       # GCC image for compiling C++ code
+docker pull openjdk:latest   # OpenJDK image for compiling and running Java code
+
+```
+We will run our codes in these images instead of directly running on our system.
+
+### **4. Verify Docker Images Are Installed**
+
+After pulling the images, users can verify that they are installed by running:
+
+```bash
+docker images
+```
+This will list all the Docker images available, and you should see `python:3.10`, `gcc:latest`, and `openjdk:latest` in the output.
+
+**Also make sure docker is running by running `sudo systemctl start docker` command in terminal.** Now, you can proceed to set up the project.
+------------
 ### Steps
 
 1. **Clone the Repository**

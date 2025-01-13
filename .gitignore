@@ -138,3 +138,10 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# User created files
+script.py
+program.cpp
+program.out
+program.java
+Program
